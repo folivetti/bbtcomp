@@ -52,7 +52,7 @@ plot_pwin <- function(modout,
                       length(rope) == 2) )
 
 
-  aa <- get_pwin(modout, selected)
+  aa <- get_pwin(modout, selected, control=control)
   nn <- ncol(aa)
   stp <- Filter(function(x) x < nn, 0.5 + cumsum(1 : nn))
   g1 <- bayesplot::mcmc_intervals(aa, point_size = 2, prob_outer = 1, prob = hdi) +
